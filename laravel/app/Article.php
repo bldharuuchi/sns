@@ -39,4 +39,10 @@ class Article extends Model
     {
         return $this->belongsToMany('App\Tag')->withTimestamps();
     }
+
+    public function reviews() { // 👈 追加
+
+        return $this->hasMany(\App\Review::class, 'article_id', 'id');
+
+    }
 }

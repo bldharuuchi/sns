@@ -10,6 +10,7 @@ Route::prefix('register')->name('register.')->group(function () {
     Route::post('/{provider}', 'Auth\RegisterController@registerProviderUser')->name('{provider}');
 });
 Route::get('/', 'ArticleController@index')->name('articles.index');
+Route::get('/review', 'ArticleController@review')->name('articles.review');
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
 Route::resource('/articles', 'ArticleController')->only(['show']);
 Route::prefix('articles')->name('articles.')->group(function () {

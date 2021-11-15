@@ -106,4 +106,9 @@ class ArticleController extends Controller
             'countLikes' => $article->count_likes,
         ];
     }
+    public function review(Request $request, Article $article)
+    {
+        return view('articles.show', ['article' => $article]);
+
+    }
 }

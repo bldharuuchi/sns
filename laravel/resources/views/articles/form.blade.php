@@ -12,5 +12,18 @@
 </div>
 <div class="form-group">
   <label></label>
-  <textarea name="body" required class="form-control" rows="16" placeholder="本文">{{ $article->body ?? old('body') }}</textarea>
+  <div id="codex-editor">
+  <textarea name="body" required class="form-control" rows="16" placeholder="本文">{{ $article->body ?? old('body') }}
+    
+  </textarea>
+  <div class="about">
+    <input type="text" v-model="title" />
+    <div>
+      <div class="edit" id="editorjs"></div>
+    </div>
+    <div>
+      <button @click="save">SAVE</button>
+    </div>
+  </div>
+  </div>
 </div>

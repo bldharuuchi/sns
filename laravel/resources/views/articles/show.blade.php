@@ -6,5 +6,7 @@
   @include('nav')
   <div class="container">
     @include('articles.card')
+    @include('articles.comment-form')
   </div>
+
 @endsection
